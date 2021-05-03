@@ -13,7 +13,7 @@ item_5 = {'price': 40, 'brand': 'MITUSU', 'type_of_detail': 'CHAIN'}
 pur_dict = {5: item_1, 9: item_2, 1: item_3, 6: item_4, 8: item_5}
 
 # заявки на оборудование принимаются когда накапливается 20 или больше частей всего
-def gen_report(purchase):
+def gen_report():
     total_price = 0
     total_count = 0
     for key, items in pur_dict.items():
@@ -22,7 +22,7 @@ def gen_report(purchase):
     print(f'Price of purchase: {total_price}; total count of details: {total_count}')
 
 
-def get_number_of_equals (purchase):
+def get_number_of_equals ():
     list_of_counts = []
     for key, items in pur_dict.items():
         list_of_counts.append(key)
@@ -34,37 +34,16 @@ def get_number_of_equals (purchase):
     return count_of_equals
 
 
-def get_number_of_items(purchase):
+def get_number_of_items():
     sum = 0
     for key in pur_dict.keys():
         sum += key
     return sum
 
 
-count_of_items = get_number_of_items(pur_dict)
-count_of_equals = get_number_of_equals(pur_dict)
+count_of_items = get_number_of_items()
+count_of_equals = get_number_of_equals()
 
 
 if count_of_items >= 20 or count_of_equals == 10:
-    gen_report(pur_dict)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    gen_report()
