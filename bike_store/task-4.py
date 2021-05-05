@@ -54,7 +54,7 @@ def gen_report():
     print(f'Purchase amount: {total}; total count of details: {sum(list_of_counts)}')
 
 
-def get_max_of_unique_items():
+def get_count_unique_items():
     unique_items = []
     for key, items in pur_dict.items():
         if pur_dict[key] not in (unique_items):
@@ -77,7 +77,7 @@ def get_number_of_items():
 
 
 count_of_items = get_number_of_items()
-number_of_equals_is_10 = get_max_of_unique_items()
+number_of_equals_is_10 = get_count_unique_items()
 print(number_of_equals_is_10)
 
 if count_of_items >= 20 or number_of_equals_is_10:
