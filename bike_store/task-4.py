@@ -28,7 +28,7 @@ item_4 = Item('TOSHIBA', 'CHAIN', 15)
 item_5 = Item('MITUSU', 'CHAIN', 40)
 item_6 = Item('TOSHIBA', 'CHAIN', 15)
 
-pur_dict = {5: item_1, 9: item_2, 1: item_3, 6: item_4, 8: item_5, 2: item_6}
+pur_dict = {5: item_1, 6: item_2, 7: item_3, 1: item_4, 3: item_5, 4: item_6}
 
 
 def gen_report():
@@ -39,16 +39,18 @@ def gen_report():
     total = 0
     print("--------------------------------------------------")
     for i in range(len(list_of_counts)):
-        count_of_equals = 0
+        count_of_equals = list_of_counts[i]
+        item = pur_dict[list_of_counts[i]]
 
         for j in range(len(list_of_counts)):
             if pur_dict[list_of_counts[i]].__eq__(pur_dict[list_of_counts[j]]) and i != j:
-                count_of_equals = list_of_counts[i] + list_of_counts[j]
+                count_of_equals = count_of_equals + list_of_counts[j]
+
         if count_of_equals >= 7:
-            total = total + pur_dict[list_of_counts[i]].price * list_of_counts[i] * 0.85
+            total = total + item.price * list_of_counts[i] * 0.85
         else:
-            total = total + pur_dict[list_of_counts[i]].price * list_of_counts[i]
-        item = pur_dict[list_of_counts[i]]
+            total = total + item.price * list_of_counts[i]
+
         print(f'Brand: {item.brand}, detail: {item.type_of_detail}, price: {item.price}, count: {list_of_counts[i]} ')
     print("--------------------------------------------------")
     print(f'Purchase amount: {total}; total count of details: {sum(list_of_counts)}')
@@ -71,12 +73,13 @@ def get_count_unique_items():
 
 def get_number_of_items():
     sum = 0
-    for key in pur_dict.keys():
+    for key, items in pur_dict.items():
         sum += key
     return sum
 
 
 count_of_items = get_number_of_items()
+print(count_of_items)
 number_of_equals_is_10 = get_count_unique_items()
 print(number_of_equals_is_10)
 
