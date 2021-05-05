@@ -26,33 +26,48 @@ item_2 = Item('WEST', 'WHEELL', 30)
 item_3 = Item('BELSHINA', 'WHEELL', 20)
 item_4 = Item('TOSHIBA', 'CHAIN', 15)
 item_5 = Item('MITUSU', 'CHAIN', 40)
+item_6 = Item('TOSHIBA', 'CHAIN', 15)
 
-pur_dict = {5: item_1, 9: item_2, 1: item_3, 6: item_4, 8: item_5}
+pur_dict = {5: item_1, 9: item_2, 1: item_3, 6: item_4, 8: item_5, 2: item_6}
+
 
 def gen_report():
-    total_price = 0
-    total_count = 0
-    print("--------------------------------------------------")
-    for key, items in pur_dict.items():
-        total_price += items.price * key
-        total_count += key
-        print(f'Brand: {items.brand}, detail: {items.type_of_detail}, price: {items.price}, count: {key} ')
-    print("--------------------------------------------------")
-    print(f'Purchase amount: {total_price}; total count of details: {total_count}')
-
-
-def get_number_of_equals ():
     list_of_counts = []
     for key, items in pur_dict.items():
         list_of_counts.append(key)
 
-    count_of_equals = 0
-    for i in range(len(list_of_counts)-1):
-        for j in range(len(list_of_counts)-1):
+    total = 0
+    print("--------------------------------------------------")
+    for i in range(len(list_of_counts)):
+        count_of_equals = 0
+
+        for j in range(len(list_of_counts)):
             if pur_dict[list_of_counts[i]].__eq__(pur_dict[list_of_counts[j]]) and i != j:
                 count_of_equals = list_of_counts[i] + list_of_counts[j]
-    return count_of_equals
+        if count_of_equals >= 7:
+            total = total + pur_dict[list_of_counts[i]].price * list_of_counts[i] * 0.85
+        else:
+            total = total + pur_dict[list_of_counts[i]].price * list_of_counts[i]
+        item = pur_dict[list_of_counts[i]]
+        print(f'Brand: {item.brand}, detail: {item.type_of_detail}, price: {item.price}, count: {list_of_counts[i]} ')
+    print("--------------------------------------------------")
+    print(f'Purchase amount: {total}; total count of details: {sum(list_of_counts)}')
 
+
+def get_max_of_unique_items():
+    unique_items = []
+    for key, items in pur_dict.items():
+        if pur_dict[key] not in (unique_items):
+            unique_items.append(items)
+
+    counts = []
+    for unique_item in unique_items:
+        count = 0
+        for key, items in pur_dict.items():
+            if unique_item.__eq__(items):
+                count = count+key
+        counts.append(count)
+    return 10 in counts
 
 def get_number_of_items():
     sum = 0
@@ -62,8 +77,13 @@ def get_number_of_items():
 
 
 count_of_items = get_number_of_items()
-count_of_equals = get_number_of_equals()
+number_of_equals_is_10 = get_max_of_unique_items()
+print(number_of_equals_is_10)
 
-
-if count_of_items >= 20 or count_of_equals == 10:
+if count_of_items >= 20 or number_of_equals_is_10:
     gen_report()
+
+
+
+
+
