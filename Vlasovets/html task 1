@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sirius</title>
+	</head>
+	<body>
+
+		<h1>Sirius system</h1>
+		<p>Home task</p>
+		<h3> General information </h3>
+			{
+  "docs": [
+    {
+      "_id": "5cd3036d07dcf10d3eaafe87",
+      "id": 16977,
+      "name_lower": "sirius",
+      "minor_faction_presences": [
+        {
+          "_id": "6053212608ee352cfb78ba53",
+          "happiness_id": 3,
+          "minor_faction_id": 6708,
+          "influence": 5.3159,
+          "active_states": [
+            {
+              "_id": "6053212608ee352cfb78ba54",
+              "id": 69,
+              "name": "Lockdown",
+              "name_lower": "lockdown"
+            }
+          ],
+          "pending_states": [],
+          "recovering_states": []
+        },
+       <p> {
+          "_id": "6053212608ee352cfb78ba50",
+          "happiness_id": 3,
+          "minor_faction_id": 3037,
+          "influence": 4.7141,
+          "active_states": [
+            {
+              "_id": "6053212608ee352cfb78ba51",
+              "id": 69,
+              "name": "Lockdown",
+              "name_lower": "lockdown"
+            }
+          ],
+          "pending_states": [],
+          "recovering_states": [
+            {
+              "_id": "6053212608ee352cfb78ba52",
+              "id": 72,
+              "name": "Outbreak",
+              "name_lower": "outbreak"
+            }
+          ]
+        },</p>
+       <p> {
+          "_id": "6053212608ee352cfb78ba4e",
+          "happiness_id": 3,
+          "minor_faction_id": 6711,
+          "influence": 6.6199,
+          "active_states": [
+            {
+              "_id": "6053212608ee352cfb78ba4f",
+              "id": 69,
+              "name": "Lockdown",
+              "name_lower": "lockdown"
+            }
+          ],
+          "pending_states": [],
+          "recovering_states": []
+        },</p>
+        {
+          "_id": "6053212608ee352cfb78ba4a",
+          "happiness_id": 3,
+          "minor_faction_id": 6712,
+          "influence": 70.01,
+          "active_states": [
+            {
+              "_id": "6053212608ee352cfb78ba4b",
+              "id": 80,
+              "name": "None",
+              "name_lower": "none"
+            }
+          ],
+          "pending_states": [
+            {
+              "_id": "6053212608ee352cfb78ba4c",
+              "id": 48,
+              "name": "Civil Unrest",
+              "name_lower": "civil unrest"
+            }
+          ],
+          "recovering_states": [
+            {
+              "_id": "6053212608ee352cfb78ba4d",
+              "id": 106,
+              "name": "Public Holiday",
+              "name_lower": "public holiday"
+            }
+          ]
+        },
+        {
+          "_id": "6053212608ee352cfb78ba46",
+          "happiness_id": 2,
+          "minor_faction_id": 6707,
+          "influence": 13.34,
+          "active_states": [
+            {
+              "_id": "6053212608ee352cfb78ba48",
+              "id": 16,
+              "name": "Boom",
+              "name_lower": "boom"
+            },
+            {
+              "_id": "6053212608ee352cfb78ba47",
+              "id": 69,
+              "name": "Lockdown",
+              "name_lower": "lockdown"
+            }
+          ],
+          "pending_states": [],
+          "recovering_states": [
+            {
+              "_id": "6053212608ee352cfb78ba49",
+              "id": 106,
+              "name": "Public Holiday",
+              "name_lower": "public holiday"
+            }
+          ]
+        }
+      ],
+      <h3> Economical information</h3>
+      <p>"reserve_type": null,
+      "reserve_type_id": null,
+      "controlling_minor_faction": "sirius corporation",
+      "controlling_minor_faction_id": 6707,
+      "simbad_ref": "sirius",
+      "updated_at": "2021-03-18T03:15:54.000Z",
+      "needs_permit": true,
+      "power_state_id": 48,
+      "power_state": "contested",
+      "power": null,
+      "primary_economy": "industrial",
+      "primary_economy_id": 4,
+      "security": "high",
+      "security_id": 48,
+      "states": [
+        {
+          "_id": "6053212608ee352cfb78ba45",
+          "id": 16,
+          "name": "Boom",
+          "name_lower": "boom"
+        },
+        {
+          "_id": "6053212608ee352cfb78ba44",
+          "id": 69,
+          "name": "Lockdown",
+          "name_lower": "lockdown"
+        }
+      ],</p>
+<h3> Goverment information</h3>
+<p>
+      "allegiance": "independent",
+      "allegiance_id": 4,
+      "government": "corporate",
+      "government_id": 64,
+      "is_populated": true,
+      "population": 2500000,
+      "z": -5.75,
+      "y": -1.28125,
+      "x": 6.25,
+      "name": "Sirius",
+      "edsm_id": 19974,
+      "__v": 0,
+      "ed_system_address": "121569805492"
+    }
+  ],
+  "total": 1,
+  "limit": 10,
+  "page": 1,
+  "pages": 1
+}</p>
+		<h5> Informstion from Swagger</h5>
+
+	</body>
+</html>
