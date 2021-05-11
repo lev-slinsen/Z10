@@ -2,52 +2,60 @@
 # запчасти: рама, руль, цепь, педали, скорости
 # каждой части должно быть минимум по 3 бренда с разными ценами (примерно 60-120 за целый байк)
 # если деталь одного бренда заканчивается, её надо до-заказать.
-'''
-бренды: объекты
-части: объекты
-заказать надо: объекты
-'''
+
+import random
+from random import choice, randrange
 
 
-class Parts():
-    def __init__(self, a, b, c, d, f):
-        self.frame = a
-        self.handlebar = b
-        self.chain = c
-        self.pedals = d
-        self.shifters = f
+class Pay_System:
+    def order(self, order):
+        print('Заказ')
+        print('===================')
+        print(f' Деталь: {order.part} - Бренд: {order.brand}')
+        print(f' Стоимость: {order.cost()}')
+        print(f' Закончились детали:')
+        print(f' Деталь: {order.out_of_part()} - Бренд: {order.out_of_brand()}')
 
 
-class_1 = Parts(30, 7, 5, 12, 18)
-k = class_1.__dict__
+class Order():
+    def __init__(self, part, brand):
+        self.part = part
+        self.brand = brand
 
 
-class Brand():
-    def __init__(self, a, b, c):
-        self.brand_1 = a
-        self.brand_2 = b
-        self.brand_3 = c
+class Parts_Brand_Cost(Order):
+    def __init__(self, part, brand, types_parts, types_price, types_brand, prices_brand):
+        super().__init__(part, brand)
+        self.types = types_parts
+        self.price = types_price
+        self.name = types_brand
+        self.kof = prices_brand
+
+    def cost(self):
+        x = self.types.index(part)
+        price_part = self.price[x]
+        y = self.name.index(brand)
+        price_brand = self.kof[y]
+        cost = price_part * price_brand
+        return cost
+
+    def out_of_part(self):
+        z = choice(self.types)
+        return z
+
+    def out_of_brand(self):
+        q = choice(self.name)
+        return q
 
 
-# доделать логику создания товара, который имеет атрибуты детали и бренда,
-# высчитать стоимость детали, вывести её на экран (вывести несколько на экран)
-
-
-class_2 = Brand(1, 1.3, 0.8)
-k_1 = class_2.__dict__
-
-print('brand_1', 'brand_2', 'brand_3')
-a = input()
-k_2 = k_1[a]
-print(k_2)
-prise = {}
-for i, j in k.items():
-    prise[i] = j * k_2
-print(prise)
-
-for i, j in prise.items():
-    print(i, j)
-total = 0
-for i in prise.values():
-    total += i
-print('Итого:', total)
+types_parts = ['frame', 'handlebar', 'chain', 'pedals', 'shifters']
+types_price = [7, 8, 9, 10, 12]
+types_brand = ['Trek', 'GT', 'LTD']
+prices_brand = (1.3, 1.8, 2)
+print('введите название запчасти ''frame', 'handlebar', 'chain', 'pedals', 'shifters')
+part = input()
+print('введите бренд ''Trek', 'GT', 'LTD')
+brand = input()
+pokupka = Parts_Brand_Cost(part, brand, types_parts, types_price, types_brand, prices_brand)
+pay_system = Pay_System()
+pay_system.order(pokupka)
