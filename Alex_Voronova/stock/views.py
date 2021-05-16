@@ -1,8 +1,7 @@
 from django.shortcuts import render
-from django.views import View
+from .models import Pizza
 
+def pizza(request):
+    pizzas = Pizza.objects.all()
+    return render (request, 'stock/pizza.html', {'пиццы':pizzas})
 
-class PizzaView(View):
-    pass
-
-# Create your views here.

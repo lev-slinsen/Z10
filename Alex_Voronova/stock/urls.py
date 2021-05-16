@@ -1,8 +1,10 @@
-from django.contrib import admin
+
 from django.urls import path
-from .views import PizzaView
+from . import views
 
 
 urlpatterns = [
-    path('pizzas/', PizzaView)
+    path('', views.pizza),
+
+
 ]
