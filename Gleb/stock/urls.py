@@ -1,7 +1,9 @@
 from django.urls import path
-from .views import PizzaView
+from . import views
+
+app_name = 'stock'
 
 
 urlpatterns = [
-    path('pizzas/', PizzaView)
+    path('pizzas/', views.pizzas_view, name='my-pizzas'),
 ]

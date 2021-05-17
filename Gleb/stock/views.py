@@ -1,6 +1,14 @@
 from django.shortcuts import render
-from django.views import View
+from .models import Pizza
 
 
-class PizzaView(View):
-    pass
+def pizzas_view(request):
+    template_name = 'stock/pizzas.html'
+
+    queryset = Pizza.objects.all()
+    print(queryset)
+    context = {
+        'pizzas': queryset,
+    }
+
+    return render(request, template_name, context)
