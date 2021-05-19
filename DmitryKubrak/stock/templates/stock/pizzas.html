@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pizzeria</title>
+</head>
+<body>
+    {%for i in pizzas%}
+        {% if i.active == True %}
+
+            <h3> {{i.name}}</h3>
+
+        {%endif%}
+    {%endfor%}
+</body>
+</html>
