@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+</head>
+<body>
+
+<h1>ДОБРО ПОЖАЛОВАТЬ!!!</h1>
+
+{% for post in posts %}
+<div>
+    <h3>{{ post.name }}</h3>
+    <div>
+        <img src="{{ post.photo.url }}" alt=width="200" height="200"{{ post.name }}" >
+        {{ post.description }}
+    </div>
+    <p>{{ post.price }}</p>
+</div>
+<hr>
+{% endfor%}
+
+</body>
+</html>
