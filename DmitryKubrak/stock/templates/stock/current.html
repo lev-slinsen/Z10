@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Created pizzas</title>
+</head>
+<body>
+    <h1>
+        You wanna make next pizzas
+    </h1>
+    <ul>
+        {% for pizza in pizzas %}
+            <li>{{ pizza.title }} - {{ pizza.description }}</li>
+        {% endfor %}
+    </ul>
+    <br>
+    <a href="{% url 'create' %}">Create</a>
+    <br>
+    <a href="{% url 'current' %}">Current pizzas</a>
+    <br>
+    <a href="{% url 'orders' %}">Orders</a>
+    <br>
+    <a href="{% url 'home' %}">Home</a>
+</body>
+</html>
