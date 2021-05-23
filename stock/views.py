@@ -12,3 +12,12 @@ def index(request):
         'pizzas': pizzas,
     }
     return render(request, 'index.html', context)
+
+from django.views.generic import CreateView
+from .forms import OrderForm
+
+class OrderView(CreateView):
+    form_class = OrderForm
+    success_url = "/order" # куда переадресовать пользователя после успешной отправки формы
+    template_name = 'order.html'
+

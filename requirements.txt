@@ -6,3 +6,4 @@ sqlparse==0.4.1
 board==1.0
 six==1.15.0
 board==1.0
+psycopg2==2.8.6
