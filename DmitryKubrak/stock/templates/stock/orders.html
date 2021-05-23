@@ -10,22 +10,29 @@
 </header>
 <body>
     Hello my friend
-    {% for i in orders %}
+    <br>
+    Заказаны следующие пиццы:
+    {% for i in orders2 %}
     <li>{{ i.name }}</li>
         Адрес: {{ i.address }}
-        Выбор: {{ i.choice }}
-
+    <br>
 
 
     {% endfor %}
+    Выбор:
+    <br>{% for i in orders %}
+         {{ i.choice_text }} Количество: {{ i.quantity }}
     <br>
-    <br>
-    <a href="{% url 'orders' %}">Create</a>
+
+    {% endfor %}
+
+
     <br>
     <a href="{% url 'create' %}">Create</a>
     <br>
     <a href="{% url 'current' %}">Current pizzas</a>
     <br>
     <a href="{% url 'home' %}">Home</a>
+
 </body>
 </html>

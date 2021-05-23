@@ -14,18 +14,6 @@ class Pizza(models.Model):
         return self.name
 
 
-class Order(models.Model):
-    name = models.CharField(max_length=30)
-    date = models.DateTimeField(auto_now_add=False)
-    address = models.TextField(max_length=255)
-    quantity = models.PositiveSmallIntegerField(default=0)
-    choice = models.ManyToManyField(Pizza)
-    objects = models.Manager()
-
-    def __str__(self):
-        return self.name
-
-
 class CreatePizza(models.Model):
     title = models.CharField(max_length=30, blank=True)
     description = models.TextField(max_length=255, blank=True)
@@ -41,13 +29,17 @@ class CreatePizza(models.Model):
         return self.title
 
 
-# class ItemSelection(models.Model):
-#     item_type = models.ForeignKey(Pizza, on_delete=models.CASCADE)
-#     item_quantity = models.ForeignKey(Quantity, on_delete=models.CASCADE)
-#     num = models.SmallIntegerField(default=0)
-#     address = models.TextField(max_length=255, default="Pizzeria")
-#     objects = models.Manager()
-#
-#
-#     class Meta:
-#         unique_together = ('item_quantity', 'item_type')
+class Order(models.Model):
+    name = models.CharField(max_length=30)
+    date = models.DateTimeField('order date', auto_now_add=False)
+    address = models.TextField(max_length=255)
+    objects = models.Manager()
+
+    def __str__(self):
+        return self.name
+
+
+class Choice(models.Model):
+    question = models.ForeignKey(Order, on_delete=models.CASCADE)
+    choice_text = models.ForeignKey(Pizza, on_delete=models.CASCADE)
+    quantity = models.PositiveSmallIntegerField(default=0)
