@@ -1,19 +1,19 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Pizza, Order, Choice
-from .forms import CreateForm
+from .forms import CreateForm, ChoiceForm
 from .models import CreatePizza
 
 
 """ Пиццы в наличии (активные) """
 def pizzas_view(request):
-    template_name = 'stock/pizzas.html'
-    queryset = Pizza.objects.all()
-    context = {
-        'pizzas': queryset
-    }
-
-    return render(request, template_name, context)
+    if request.method == 'GET':
+        return render(request, 'stock/home.html', {'form': ChoiceForm()})
+    else:
+        form = ChoiceForm(request.POST)
+        new_pizza = form.save(commit=False)
+        new_pizza.save()
+        return redirect('home')
 
 
 """ Заказ """

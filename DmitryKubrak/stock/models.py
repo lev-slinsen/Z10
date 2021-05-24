@@ -6,7 +6,7 @@ class Pizza(models.Model):
     size = models.CharField(max_length=20)
     description = models.TextField(max_length=255)
     weight = models.IntegerField()
-    price = models.FloatField()
+    price = models.FloatField(default=15.0)
     active = models.BooleanField(default=False)
     objects = models.Manager()
 
@@ -43,3 +43,10 @@ class Choice(models.Model):
     question = models.ForeignKey(Order, on_delete=models.CASCADE)
     choice_text = models.ForeignKey(Pizza, on_delete=models.CASCADE)
     quantity = models.PositiveSmallIntegerField(default=0)
+    CHOICES = (
+        ('s', 'small'),
+        ('m', 'medium'),
+        ('l', 'large'),
+        ('xl', 'x-large')
+    )
+    size = models.CharField(max_length=300, choices=CHOICES)
