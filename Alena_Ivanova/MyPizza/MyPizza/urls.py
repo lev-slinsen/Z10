@@ -20,6 +20,8 @@ from django.conf.urls import include, url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('stock.urls'))
+    path('', include('stock.urls')),
+    path('order/', include('stock.urls')),
+    path('pizzadraft/', include('stock.urls'))
 
 ]
