@@ -1,0 +1,30 @@
+{% extends "stock/base.html" %}
+
+{% block title %}{{i.name}}{% endblock %}
+
+{% block content %}
+
+Пицца это вкусно! - общее для всех
+<br>
+А теперь о выбранной вами пицце:
+<br>
+
+	{% for i in pizzas_list %}
+
+		{% if i.engname == pizza_name %}
+
+            {{i.name}}
+			<br>
+			{{i.description}}
+			<br>
+    		В пиццу {{ i.name }} входят игридиенты:<br>
+    		{% for ingredient in i.ingredients.all %}
+    			{{ ingredient.name }}<br>
+    		{% endfor %}
+
+		{% endif %}
+
+	{% endfor %}
+
+
+{% endblock %}

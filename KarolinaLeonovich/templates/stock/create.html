@@ -1,0 +1,29 @@
+{% extends "stock/base.html" %}
+
+{% block title %}Новая пицца{% endblock %}
+
+{% block content %}
+
+	Создай новую пиццу!
+	<br>
+	<form method="post">
+		{% csrf_token %}
+		Название пиццы:<br>
+		{{ form.name }}<br>
+		Name of picca:<br>
+		{{ form.engname }}<br>
+		Описание пиццы:<br>
+		{{ form.description }}<br>
+		Ингридиенты:<br>
+		{{ form.ingredients }}<br>
+		Комментарий:<br>
+		{{ form.comment }}<br>
+		Имя отправителя:<br>
+		{{ form.creator }}<br>
+		Мы посмотрим. что вы наделали и если норм. пицца появится на сайте<br>
+		<button type="submit">Добавить пиццу</button>
+		<span>{{ error }}</span>
+	</form>
+
+
+{% endblock %}

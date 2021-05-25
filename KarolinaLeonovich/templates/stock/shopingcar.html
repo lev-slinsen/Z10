@@ -1,0 +1,21 @@
+{% extends "stock/base.html" %}
+
+{% block title %}{{i.name}}{% endblock %}
+
+{% block content %}
+
+Заказ:
+<br>
+    <form method="post">
+		{% csrf_token %}
+		{{ form_shopingcar }}<br>
+
+		<button type="submit">Оформить заказ</button>
+		<span>{{ error }}</span>
+	</form>
+<br>
+<h1><a href="http://127.0.0.1:8000/stock">На главную</a></h1>
+
+
+{% endblock %}
+

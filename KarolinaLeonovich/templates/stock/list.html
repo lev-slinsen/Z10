@@ -1,0 +1,35 @@
+{% extends "stock/base.html" %}
+
+{% block title %}Пиццы на заказ{% endblock %}
+
+{% block content %}
+	<table>
+		<thead>
+			<tr>
+				<th>Пиццы в наличии:</th>
+			</tr>
+		</thead>
+		<tbody>
+	{% for i in pizzas_list %}
+	
+		{% if i.active %}
+			<tr>
+				<td><a href="http://127.0.0.1:8000/stock/pizzas/{{i.engname}}">{{i.name}}</a></td>
+			</tr>
+
+		{% endif %}
+
+	{% endfor %}
+		</tbody>
+	</table>
+	<br>
+	Ваше имя:
+	<br>
+	<input type="n">
+	<br>
+	Адрес:
+	<br>
+	<input type="n">
+	<h1><a href="http://127.0.0.1:8000/stock/order">Заказать пиццу!</a></h1>
+	<h1><a href="http://127.0.0.1:8000/stock/create">Сделать свою пиццу!</a></h1>
+{% endblock %}

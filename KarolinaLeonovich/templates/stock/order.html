@@ -1,0 +1,22 @@
+{% extends "stock/base.html" %}
+
+{% block title %}{{i.name}}{% endblock %}
+
+{% block content %}
+
+Купи пиццу! Слыш. купи!
+<br>
+    <form method="post">
+		{% csrf_token %}
+		Выбери пиццу:<br>
+		{{ form_order.position }}<br>
+		Количество:<br>
+		{{ form_order.quantity }}<br>
+		<button type="submit">Заказать пиццу</button>
+		<span>{{ error }}</span>
+	</form>
+<br>
+<h1><a href="http://127.0.0.1:8000/stock/order/shopingcar">Корзина заказа</a></h1>
+
+
+{% endblock %}
