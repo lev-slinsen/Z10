@@ -1,0 +1,219 @@
+{% load static %}
+<!DOCTYPE html>
+
+
+<html style="font-size: 16px;">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="ПИЦЦА&nbsp; БЫСТРО ВКУСНО">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Pizza Today</title>
+    <link rel="stylesheet" href="{% static 'css/nicepage.css' %}" media="screen">
+<link rel="stylesheet" href="{% static 'css/Pizza_Today.css' %}" media="screen">
+    <script class="u-script" type="text/javascript" src="{% static 'js/jquery.js' %}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% static 'js/nicepage.js' %}" defer=""></script>
+    <meta name="generator" content="Nicepage 3.14.0, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "",
+		"url": "index.html"
+}</script>
+    <meta property="og:title" content="Pizza Today">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#478ac9">
+    <link rel="canonical" href="index.html">
+    <meta property="og:url" content="index.html">
+  </head>
+  <body class="u-body"><header class="u-align-left u-clearfix u-custom-color-2 u-header u-header" id="sec-646c"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <h1 class="u-align-center u-text u-text-custom-color-3 u-text-1">ПИЦЦА&nbsp; БЫСТРО ВКУСНО</h1>
+      </div></header>
+    <section class="u-align-left u-clearfix u-section-1" id="sec-cc24">
+      <div class="u-expanded-width u-tab-links-align-justify u-tabs u-tabs-1">
+        <ul class="u-spacing-30 u-tab-list u-unstyled u-tab-list-1" role="tablist">
+          <li class="u-tab-item" role="presentation">
+            <a class="active u-active-custom-color-1 u-button-style u-palette-3-light-2 u-radius-16 u-tab-link u-tab-link-1" id="link-tab-081f" href="#tab-081f" role="tab" aria-controls="tab-081f" aria-selected="true">Сегодня в продаже<br>
+            </a>
+          </li>
+          <li class="u-tab-item" role="presentation">
+            <a class="u-active-custom-color-1 u-button-style u-palette-3-light-2 u-radius-16 u-tab-link u-tab-link-2" id="link-tab-4d57" href="#tab-4d57" role="tab" aria-controls="tab-4d57" aria-selected="false">Заказ&nbsp;</a>
+          </li>
+          <li class="u-tab-item" role="presentation">
+            <a class="u-active-custom-color-1 u-button-style u-palette-3-light-2 u-radius-16 u-tab-link u-tab-link-3" id="link-tab-3a42" href="#tab-3a42" role="tab" aria-controls="tab-3a42" aria-selected="false">Создай пиццу сам<br>
+            </a>
+          </li>
+          <li class="u-tab-item u-tab-item-4" role="presentation">
+            <a class="u-active-custom-color-1 u-button-style u-palette-3-light-2 u-radius-16 u-tab-link u-tab-link-4" id="tab-d7e7" href="#link-tab-d7e7" role="tab" aria-controls="link-tab-d7e7" aria-selected="false">О нас</a>
+          </li>
+        </ul>
+                <div class="u-tab-content">
+          <div class="u-container-style u-tab-active u-tab-pane" id="tab-081f" role="tabpanel" aria-labelledby="link-tab-081f">
+            <div class="u-container-layout u-container-layout-1">
+
+              <p class="u-text u-text-1">
+                {%for i in пиццы%}
+                  {% if i.active == True %}
+
+                      Название: {{i.name}}
+                      Размер: {{i.size}}
+                      Стоимость: {{i.price}}
+                  {%endif%}
+                {%endfor%}
+
+
+                </p>
+              <div alt="" class="u-image u-image-circle u-image-1"></div>
+              <h4 class="u-text u-text-custom-color-3 u-text-2">у нас вкусно </h4>
+            </div>
+          </div>
+          <div class="u-container-style u-image u-tab-pane u-image-2" id="tab-4d57" role="tabpanel" data-image-width="626" data-image-height="325">
+            <div class="u-container-layout u-container-layout-2">
+              <h4 class="u-text u-text-custom-color-3 u-text-3">Выбери пиццу у нас вкусно </h4>
+              {% csrf_token %}
+              <form method="post">
+
+              </form>
+
+              <div class="u-form u-form-1">
+                <form action="#" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" style="padding: 10px" source="custom" name="form">
+                  <div class="u-form-group u-form-group-1">
+                    <label for="text-a696" class="u-form-control-hidden u-label"></label>
+                    <input type="time" placeholder="Время" id="text-a696" name="text" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-21 u-text-custom-color-3 u-white u-input-1">
+                  </div>
+                  <div class="u-form-group u-form-group-2">
+                    <label for="text-0879" class="u-form-control-hidden u-label"></label>
+                    <input type="date" placeholder="Дата" id="text-a696" name="text" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-21 u-text-custom-color-3 u-white u-input-1">
+                  </div>
+                  <div class="u-form-group u-form-name">
+                    <label for="name-33f1" class="u-form-control-hidden u-label">Имя</label>
+                    <input type="text" placeholder="Введите Ваше имя" id="name-33f1" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-21 u-text-custom-color-3 u-white u-input-3" required="">
+                  </div>
+                  <div class="u-form-address u-form-group u-form-group-4">
+                    <label for="address-ab3e" class="u-form-control-hidden u-label">Адрес</label>
+                    <input type="text" placeholder="Введите Ваш адрес" id="address-ab3e" name="address" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-21 u-text-custom-color-3 u-white u-input-4" required="">
+                  </div>
+                  <div class="u-form-group u-form-partition-factor-2 u-form-select u-form-group-5">
+                    <label for="select-2710" class="u-form-control-hidden u-label">Выбрать</label>
+                    <div class="u-form-select-wrapper">
+                      <select id="select-2710" name="select-1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-21 u-text-custom-color-3 u-white u-input-5">
+                        {%for i in order.products%}
+
+                          <option value="{{i}}">{{i}}</option>
+
+                        {%endfor%}
+                      </select>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
+                    </div>
+                  </div>
+                  <div class="u-form-group u-form-partition-factor-2 u-form-select u-form-group-6">
+                    <label for="select-02e0" class="u-form-control-hidden u-label">Выбрать</label>
+                    <div class="u-form-select-wrapper">
+                      <select id="select-02e0" name="select" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-21 u-text-custom-color-3 u-white u-input-6">
+
+
+                        <option value="Item 1">1</option>
+                        <option value="Item 2">2</option>
+                        <option value="Item 3">3</option>
+                        <option value="Item 4">4</option>
+                        <option value="Item 5">5</option>
+                        <option value="Item 6">6</option>
+                        <option value="Item 7">7</option>
+                        <option value="Item 8">8</option>
+                        <option value="Item 9">9</option>
+                        <option value="Item 10">10</option>
+
+                      </select>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
+                    </div>
+                  </div>
+                  <div class="u-align-left u-form-group u-form-submit">
+                    <a href="#" class="u-btn u-btn-submit u-button-style u-custom-color-3 u-btn-1">Отправить</a>
+                    <input type="submit" value="submit" class="u-form-control-hidden">
+                  </div>
+                  <div class="u-form-send-message u-form-send-success"> Спасибо! Ваше сообщение отправлено. </div>
+                  <div class="u-form-send-error u-form-send-message"> Отправка не удалась. Пожалуйста, исправьте ошибки и попробуйте еще раз. </div>
+                  <input type="hidden" value="" name="recaptchaResponse">
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="u-container-style u-image u-tab-pane u-image-3" id="tab-3a42" role="tabpanel" data-image-width="626" data-image-height="325">
+            <div class="u-container-layout u-container-layout-3">
+
+              <h4 class="u-text u-text-custom-color-3 u-text-5">почувствуй себя шефом - СОЗДАЙ ПИЦЦУ<br>
+              </h4>
+              <div class="u-form u-form-2">
+                <form action="#" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" style="padding: 10px" source="custom" name="form">
+                  <div class="u-form-group u-form-name">
+                    <label for="name-33f1" class="u-form-control-hidden u-label">Имя</label>
+                    <input type="text" placeholder="Введите Ваше имя" id="name-33f1" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-21 u-text-custom-color-3 u-white u-input-7" required="">
+                  </div>
+                  <div class="u-form-group u-form-select u-form-group-9">
+                    <label for="select-02e0" class="u-form-control-hidden u-label">Выбрать</label>
+                    <div class="u-form-select-wrapper">
+                      <select id="select-02e0" name="select" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-21 u-text-custom-color-3 u-white u-input-8">
+                        <option value="Item 1">Item 1</option>
+                        <option value="Item 2">Item 2</option>
+                        <option value="Item 3">Item 3</option>
+                      </select>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
+                    </div>
+                  </div>
+                  <div class="u-form-group u-form-select u-form-group-10">
+                    <label for="select-2710" class="u-form-control-hidden u-label">Выбрать</label>
+                    <div class="u-form-select-wrapper">
+                      <select id="select-2710" name="select-1" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-21 u-text-custom-color-3 u-white u-input-9">
+                        <option value="Item 1">Item 1</option>
+                        <option value="Item 2">Item 2</option>
+                        <option value="Item 3">Item 3</option>
+                      </select>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" version="1" class="u-caret"><path fill="currentColor" d="M4 8L0 4h8z"></path></svg>
+                    </div>
+                  </div>
+                  <div class="u-form-group u-form-group-11">
+                    <label for="textarea-fa5a" class="u-form-control-hidden u-label"></label>
+                    <textarea placeholder="Комментарий" rows="4" cols="50" id="textarea-fa5a" name="textarea" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-radius-21 u-text-custom-color-3 u-white u-input-10"></textarea>
+                  </div>
+                  <div class="u-align-left u-form-group u-form-submit">
+                    <a href="#" class="u-btn u-btn-submit u-button-style u-custom-color-3 u-btn-2">Отправить</a>
+                    <input type="submit" value="submit" class="u-form-control-hidden">
+                  </div>
+                  <div class="u-form-send-message u-form-send-success"> Спасибо! Ваше сообщение отправлено. </div>
+                  <div class="u-form-send-error u-form-send-message"> Отправка не удалась. Пожалуйста, исправьте ошибки и попробуйте еще раз. </div>
+                  <input type="hidden" value="" name="recaptchaResponse">
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="u-container-style u-tab-pane" id="link-tab-d7e7" role="tabpanel" aria-labelledby="tab-d7e7">
+            <div class="u-container-layout u-container-layout-4">
+              <p class="u-align-left u-text u-text-6">Здесь когда-нибудь будет что-то хорошее</p>
+            </div>
+
+
+
+
+
+
+
+
+
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-dc14"><div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-right u-small-text u-text u-text-custom-color-3 u-text-variant u-text-1">
+          <a href="https://fsymbols.com/ru/simvoly/avtorskoe-pravo/#:~:text=%D0%97%D0%BD%D0%B0%D1%87%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%B7%D0%BD%D0%B0%D0%BA%D0%B0%20%D0%B0%D0%B2%D1%82%D0%BE%D1%80%D1%81%D0%BA%D0%BE%D0%B3%D0%BE%20%D0%BF%D1%80%D0%B0%D0%B2%D0%B0%20%C2%A9%20%D0%B8%20%E2%84%97&amp;text=%D0%94%D0%BB%D1%8F%20%D0%B7%D0%B2%D1%83%D0%BA%D0%BE%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B8%20%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%BE%20%D0%BD%D0%B5%D0%B3%D0%BE%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D0%B5%D1%82%D1%81%D1%8F,Copyright'%20%D0%B8%D0%BB%D0%B8%20%D1%81%D0%BE%D0%BA%D1%80%D0%B0%D1%89%D0%B5%D0%BD%D0%B8%D0%B5%20'Copr." class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1">©&nbsp;</a>Все сам<br>
+        </p>
+      </div></footer>
+ 
+  </body>
+</html>
