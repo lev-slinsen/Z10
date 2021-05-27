@@ -1,11 +1,14 @@
 from django.contrib import admin
-from .models import Pizza
+from .models import Pizza, Ingredient
 
 
+@admin.register(Pizza)
 class PizzaAdmin(admin.ModelAdmin):
-    fields = ('id', 'name', 'size', 'weight', 'price', 'description')
+    fields = ('id', 'name', 'weight', 'price', 'description', 'ingredients', 'size')
     readonly_fields = ('id',)
-    list_display = ('name', 'size', 'price')
+    list_display = ('name', 'price')
 
 
-admin.site.register(Pizza, PizzaAdmin)
+@admin.register(Ingredient)
+class IngredientAdmin(admin.ModelAdmin):
+    pass
