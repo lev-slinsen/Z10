@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import CreatePizza, Pizza
+from .models import CreatePizza, Choice, Pizza
 
 
 class CreateForm(ModelForm):
@@ -7,10 +7,9 @@ class CreateForm(ModelForm):
         model = CreatePizza
         fields = ['title', 'description', 'size', 'weight', 'author', 'comment']
 
-#
+
 class ChoiceForm(ModelForm):
     class Meta:
-        model = Pizza
-        fields = ['name', 'size', 'description', 'weight']
-
+        model = Choice
+        fields = ['choice_text', 'quantity', 'size']
 

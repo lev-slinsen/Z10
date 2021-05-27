@@ -34,5 +34,6 @@ class QuestionAdmin(admin.ModelAdmin):
     inlines = [ChoiceInline]
     list_display = ('name', 'address', 'date')
 
-admin.site.register(Order, QuestionAdmin)
 
+admin.site.register(Order, QuestionAdmin)
+# @admin.register(Order)
