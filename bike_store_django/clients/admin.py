@@ -1,24 +1,14 @@
 from django.contrib import admin
-from .models import Clients, Order, Product, Choice
+from .models import Client, Order, Product, Choice
 
 # Register your models here.
 
-class ClientsAdmin(admin.ModelAdmin):
+class ClientAdmin(admin.ModelAdmin):
     fields = ('name',)
     readonly_fields = ('id',)
     list_display = ('name', )
 
-
-admin.site.register(Clients, ClientsAdmin)
-
-
-# class OrderAdmin(admin.ModelAdmin):
-#     fields = ('name', 'date')
-#     readonly_fields = ('id', )
-#     list_display = ('name', 'date' )
-
-
-# admin.site.register(Order, OrderAdmin)
+admin.site.register(Client, ClientAdmin)
 
 
 class ProductAdmin(admin.ModelAdmin):
@@ -28,7 +18,6 @@ class ProductAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Product, ProductAdmin)
-#################
 
 
 class ChoiceInline(admin.TabularInline):
