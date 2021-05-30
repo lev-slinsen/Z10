@@ -19,4 +19,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # stock urls
+    path('stock/', include('stock.urls', namespace='stock')),
 ]

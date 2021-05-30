@@ -5,8 +5,8 @@ from .models import Pizza
 def pizzas_view(request):
     template_name = 'stock/pizzas.html'
 
-    queryset = Pizza.objects.all()
-    print(queryset)
+    queryset = Pizza.objects.filter(confirmed=True)
+
     context = {
         'pizzas': queryset,
     }
