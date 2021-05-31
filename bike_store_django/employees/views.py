@@ -1,8 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Employee
+from .models import Employee, Team, Timetable
+from datetime import date
+
 
 
 def home(request):
-    posts = Employee.name.all()
-    return render(request, 'blog/home.html', {'posts':posts})
+    posts = Employee.objects.all()
+    tosts = Timetable.objects.all()
+    today = date.today()
+
+    return render(request, 'blog/home.html', {'posts': posts, 'tosts': tosts, "today": today})
