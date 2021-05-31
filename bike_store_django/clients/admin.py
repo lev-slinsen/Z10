@@ -32,7 +32,8 @@ class QuestionAdmin(admin.ModelAdmin):
     ]
 
     inlines = [ChoiceInline]
-    list_display = ('name', 'date', )
+    list_display = ('name', 'date', 'price', 'final_price')
+    # list_display = ('name', 'date', 'final_price')
 
 
 admin.site.register(Order, QuestionAdmin)
