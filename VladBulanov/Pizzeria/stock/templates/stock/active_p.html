@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Actives</title>
+</head>
+<body>
+<header>
+    <h1 style= align="center"> Active: </h1>
+        </header>
+    {%for i in Actives%}
+        {%if i.active == True %}
+            <h2>Name:{{i.name}}</h2>
+            <p>Size:{{i.size}}</p>
+            <p>Price:{{i.price}}</p>
+            <p>Description:{{i.description}}</p>
+        {%endif%}
+    {%endfor%}
+</body>
+</html>
