@@ -4,5 +4,5 @@ from .models import Employee
 
 
 def home(request):
-    posts = Employee.name.all()
-    return render(request, 'blog/home.html', {'posts':posts})
+    posts = Employee.objects.all()
+    return render(request, 'blog/home.html', {'posts': posts})
