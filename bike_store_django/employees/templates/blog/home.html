@@ -7,16 +7,26 @@
 <body>
 
 {% for post in posts %}
-<div>
-    <h3>{{ post.name }}</h3>
     <div>
-        <img src="{{post.photo.url }}" alt="{{ post.name}}">
+        <h3>{{ post.name }}</h3>
+        <div>
+            <img src="{{ post.photo.url }}" alt="{{ post.name }}">
+<!--            <h1>{{ tosts }}</h1>-->
 
+        </div>
+    <hr>
+{% endfor %}
     </div>
 
-</div>
-<hr>
-{% endfor %}
+    <div>
+        <div>
+            < alt="{{ tosts }}">
+
+        </div>
+
+    </div>
+    <hr>
+
 
 </body>
 </html>
