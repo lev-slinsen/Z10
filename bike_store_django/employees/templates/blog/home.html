@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% for post in posts %}
+    <div>
+        <h3>{{ post.name }}</h3>
+        <div>
+            <img src="{{ post.photo.url }}" alt="{{ post.name }}">
+<!--            <h1>{{ tosts }}</h1>-->
+
+        </div>
+    <hr>
+{% endfor %}
+    </div>
+
+    <div>
+        <div>
+            < alt="{{ tosts }}">
+
+        </div>
+
+    </div>
+    <hr>
+
+
+</body>
+</html>
