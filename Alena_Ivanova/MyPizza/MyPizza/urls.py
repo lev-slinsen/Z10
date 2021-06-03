@@ -1,4 +1,4 @@
-"""MyPizzeria URL Configuration
+"""MyPizza URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -15,7 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import include, url
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('stock.urls')),
+    path('order/', include('stock.urls')),
+    path('pizzadraft/', include('stock.urls'))
+
 ]
