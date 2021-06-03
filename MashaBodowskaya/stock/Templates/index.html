@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if pizzas %}
+    <ul>
+    {% for pizza in pizzas %}
+        <li><a href="/{{ pizza.id }}/">{{ pizza.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Planned maintenance have taken place</p>
+{% endif %}
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if used_parts %}
+    <ul>
+    {% for used_part in used_parts %}
+        <li><a href=>{{ Stock.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Planned maintenance have taken place</p>
+{% endif %}
+</body>
+</html>
