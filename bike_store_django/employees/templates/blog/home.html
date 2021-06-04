@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -20,7 +20,13 @@
 
     <div>
         <div>
-            < alt="{{ tosts }}">
+            {% for tost in tosts %}
+                {% if tost.is_working_day and tost.day == today %}
+                    Сегодня работают:
+	                {{ tost.team }}
+		        {% endif %}
+            {% endfor %}
+
 
         </div>
 
@@ -30,3 +36,8 @@
 
 </body>
 </html>
+
+    team = models.ForeignKey(Team, on_delete=models.CASCADE)
+    day = models.DateField()
+    is_working_day = models.BooleanField()
+    manager = models.ForeignKey(Employee, related_name='incharge', on_delete=models.CASCADE, null=True)

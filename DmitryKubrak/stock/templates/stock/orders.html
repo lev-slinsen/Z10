@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Orders</title>
+</head>
+<header>
+
+
+</header>
+<body>
+    Hello my friend
+    <br>
+    Заказаны следующие пиццы:
+    {% for i in orders2 %}
+    <li>{{ i.name }}</li>
+        Адрес: {{ i.address }}
+    <br>
+
+
+    {% endfor %}
+    Выбор:
+    <br>{% for i in orders %}
+         {{ i.choice_text }} Количество: {{ i.quantity }} Размер: {{ i.size }}
+    <br>
+
+    {% endfor %}
+
+
+    <br>
+    <a href="{% url 'create' %}">Create</a>
+    <br>
+    <a href="{% url 'current' %}">Current pizzas</a>
+    <br>
+    <a href="{% url 'home' %}">Home</a>
+
+</body>
+</html>
