@@ -3,10 +3,12 @@ from .models import Client, Order, Product, Choice
 
 # Register your models here.
 
+
 class ClientAdmin(admin.ModelAdmin):
     fields = ('name',)
     readonly_fields = ('id',)
     list_display = ('name', )
+
 
 admin.site.register(Client, ClientAdmin)
 
@@ -37,4 +39,3 @@ class QuestionAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Order, QuestionAdmin)
-

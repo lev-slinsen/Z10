@@ -22,8 +22,7 @@ class Product(models.Model):
 
 class Order(models.Model):
     name = models.ForeignKey(Client, on_delete=models.CASCADE)
-    date = models.DateTimeField(auto_now_add=False)
-
+    date = models.DateTimeField(auto_now_add=False, auto_created=True)
 
     def __str__(self):
         return f'{self.name} '
@@ -57,14 +56,13 @@ class Order(models.Model):
             discount_2 = 10
 
         price_after_discount = (1 - max(discount_1, discount_2)/100) * price_before_discount
-        return price_after_discount
+        return round(price_after_discount, 2)
 
 
 class Choice(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.PositiveSmallIntegerField(default=0)
-
 
     def __str__(self):
         return f'{self.order}  {self.product}  {self.quantity}'

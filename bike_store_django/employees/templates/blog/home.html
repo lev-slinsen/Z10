@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -20,10 +20,16 @@
 
     <div>
         <div>
-            < alt="{{ tosts }}">
+            {% for tost in tosts %}
+                {% if tost.is_working_day and tost.day == today %}
+                    Сегодня работают:
+	                {{ tost.team }}
+		        {% endif %}
+            {% endfor %}
+
 
         </div>
-
+<a href="http://127.0.0.1:8000/create">Создать расписание на месяц</a>
     </div>
     <hr>
 

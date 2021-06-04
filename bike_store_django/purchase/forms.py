@@ -7,7 +7,4 @@ from .models import Order
 class OrderForm(ModelForm):
     class Meta:
         model = Order
-        fields = ['part', 'qty']
-
-    s = forms.model_to_dict()
-
+        fields = ['parts', 'qty']

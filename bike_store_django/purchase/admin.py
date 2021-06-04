@@ -5,21 +5,14 @@ from .models import Stock
 from .models import Order
 
 
+@admin.register(Stock)
 class StockAdmin(admin.ModelAdmin):
     fields = ('name', 'price')
     list_display = ('name', 'price')
 
 
-admin.site.register(Stock, StockAdmin)
-
-
+@admin.register(Order)
 class OrderAdmin(admin.ModelAdmin):
-    fields = ('part', 'date', 'qty')
-    list_display = ('part', 'date', 'qty', 'price')
-
-
-    #def calculate(self, self, request, obj, form, change):
-        #Order.objects.annotate(total_price=F('part') * F('qty'))
-
-
-admin.site.register(Order, OrderAdmin)
+    fields = ('id', 'parts', 'date', 'qty', 'price')
+    readonly_fields = ('id', 'price',)
+    list_display = ('date', 'qty', 'price')
