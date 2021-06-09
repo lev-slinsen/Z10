@@ -17,13 +17,12 @@ class Product(models.Model):
     active = models.BooleanField(default=True)
 
     def __str__(self):
-        return f'{self.name}:  {self.price}'
+        return f'{self.name}  (price {self.price})'
 
 
 class Order(models.Model):
     name = models.ForeignKey(Client, on_delete=models.CASCADE)
     date = models.DateTimeField(auto_now_add=False)
-
 
     def __str__(self):
         return f'{self.name} '
@@ -40,7 +39,7 @@ class Order(models.Model):
         return price_before_discount
 
     @property
-    def final_price(self):
+    def price_after_discount(self):
         choices = Choice.objects.filter(order=self.id)
         price_before_discount = 0
         total_count = 0
@@ -59,6 +58,12 @@ class Order(models.Model):
         price_after_discount = (1 - max(discount_1, discount_2)/100) * price_before_discount
         return price_after_discount
 
+    # @property
+    # def one_product_price(self):
+    #     choices = Choice.objects.filter(order=self.id)
+    #     for choice in choices:
+    #         return f'{choice.product}. Price for all items  -  {choice.product.price * choice.quantity}'
+
 
 class Choice(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
@@ -68,10 +73,4 @@ class Choice(models.Model):
 
     def __str__(self):
         return f'{self.order}  {self.product}  {self.quantity}'
-
-    # def quantity1(self):
-    #     choices = Choice.objects.all()
-    #     for choice in choices:
-    #         print(choice.quantity)
-    #         return choice.quantity
 

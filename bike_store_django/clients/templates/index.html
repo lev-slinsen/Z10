@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Orders</title>
     <style>
                 td { padding: 6px; border: 1px solid #767676; text-align: left; }
                 caption { color: #3b90b3; font-weight: bold; text-align: left; }
@@ -16,6 +16,7 @@
     <table>
       <tr>
         <th>Order ID</th>
+        <th>Customer name</th>
         <th>Order Date</th>
         <th>Price w/o discount</th>
         <th>Final price</th>
@@ -23,17 +24,31 @@
 
   {% for order in orders %}
      <tr>
-        <td>{{ order.id }}</td>
+        <td><a href="{% url 'home' %}">{{ order.id }}</a> </td>
+        <td>{{ order.name }}</td>
         <td>{{ order.date }}</td>
         <td>{{ order.price }}</td>
         <td>{{ order.price_after_discount }}</td>
      </tr>
   {% endfor %}
+
+
 </table>
 {% else %}
     <p>There were no orders.</p>
 {% endif %}
 </body>
+
+<br>
+<br>
+        Номера айди возвращают домашнюю страницу
+<!--https://stackoverflow.com/questions/53161556/reverse-for-order-detail-with-keyword-arguments-order-id-juqedja6qq-n-->
+<br>
+<br>
+<br>
+<footer>
+    <a href="{% url 'home' %}">Home</a>
+</footer>
 </html>
 
 
