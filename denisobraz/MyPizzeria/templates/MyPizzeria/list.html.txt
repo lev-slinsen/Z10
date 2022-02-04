@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Пиццы на заказ{% endblock %}
+
+{% block content %}
+
+		{% for i in pizzas_list %}
+
+				{% if i.active %}
+						<a href="#">{{i.name}}</a>
+				{% endif %}
+				
+		{% endfor %}
+		
+{% endblock %}						
